@@ -1,12 +1,12 @@
 <div class="vehicle-make-row-wrapper" [ngClass]="{ 'expanded': expanded }">
   <div class="row vehicle-make-row">
-    <div class="col-6">
+    <div class="col-7 col-lg-6">
       <span>{{ vehicleMake.Make_Name }}</span>
     </div>
     <div class="col-lg-3 make-id">
       <span>{{ vehicleMake.Make_ID }}</span>
     </div>
-    <div class="col-6 col-lg-3">
+    <div class="col-5 col-lg-3">
         <span class="details" (click)="toggleDetails()" [ngClass]="{'expanded': expanded}">
           {{ this.expanded ? "Hide details" : "Show details" }}
         </span>

@@ -8,7 +8,7 @@
     </div>
   </div>
   <div class="row table-header vehicle-make-row">
-    <div class="col-6">
+    <div class="col-7 col-lg-6">
       <span>Name</span>
     </div>
     <div class="col-3 make-id">
@@ -20,7 +20,7 @@
   </div>
   <div class="row vehicle-make-row" *ngIf="error">
     <div class="alert alert-danger col-12" role="alert">
-      {{ errorText }}
+      <i class="fa fa-exclamation-circle"></i> {{ errorText }}
     </div>
   </div>
   <div [hidden]="loading"><app-vehicle-make-row *ngFor="let make of makes" [vehicleMake]="make"></app-vehicle-make-row></div>

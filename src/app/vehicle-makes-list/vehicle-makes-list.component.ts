@@ -27,17 +27,19 @@ export class VehicleMakesListComponent implements OnInit {
 
   loadData(): void {
     this.loading = true;
+    this.error = false;
     this.offset = 0;
+
     this.vehiclesService.getVehicleMakes(this.count, this.offset, this.search).subscribe(
       result => {
         this.makes = result;
-        this.error = false;
         this.loading = false;
       },
       error => {
         this.makes = [];
         this.error = true;
-        this.errorText = error.error;
+        this.errorText = error.status === 404 ? 'No vehicle makes match the search criteria.' :
+                                                'An unexpected error has occurred.  Please try again later';
         this.loading = false;
         console.log(error);
       }
