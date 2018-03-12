@@ -1,11 +1,9 @@
-///<reference path="vehicle-makes-list/vehicle-makes-list.component.ts"/>
-import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {HttpClient, HttpParams} from '@angular/common/http';
 import {environment} from '../environments/environment';
-import {VehicleMake} from '../shared/models/vehicleMake.model';
+import {VehicleMake} from '../shared/models/vehicle-make.model';
 import {Observable} from 'rxjs/Observable';
-import 'rxjs/add/operator/map';
-import {GetVehicleMakesResponse} from '../shared/models/getVehicleMakesResponse';
+import {VehiclesServiceResponse} from '../shared/models/vehicles-service-response.model';
 import {VehicleType} from '../shared/models/vehicle-type.model';
 
 @Injectable()
@@ -25,7 +23,7 @@ export class VehiclesService {
                               .set('offset', offset.toString())
     };
 
-    return this.http.get<GetVehicleMakesResponse>(url, httpOptions).map(
+    return this.http.get<VehiclesServiceResponse>(url, httpOptions).map(
       (response) => {
         return response.results as Array<VehicleMake>;
       }
@@ -37,7 +35,7 @@ export class VehiclesService {
 
     const httpOptions = {};
 
-    return this.http.get<GetVehicleMakesResponse>(url, httpOptions).map(
+    return this.http.get<VehiclesServiceResponse>(url, httpOptions).map(
       (response) => {
         return response.results as Array<VehicleType>;
       }

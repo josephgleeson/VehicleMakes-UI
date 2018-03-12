@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {VehicleMake} from '../../shared/models/vehicleMake.model';
+import {VehicleMake} from '../../shared/models/vehicle-make.model';
 import {VehiclesService} from '../vehicles.service';
 import {VehicleType} from '../../shared/models/vehicle-type.model';
 

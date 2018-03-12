@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {VehiclesService} from '../vehicles.service';
-import {VehicleMake} from '../../shared/models/vehicleMake.model';
+import {VehicleMake} from '../../shared/models/vehicle-make.model';
 
 @Component({
   selector: 'app-vehicle-makes-list',
