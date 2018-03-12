@@ -1,0 +1,30 @@
+<div class="vehicle-make-row-wrapper" [ngClass]="{ 'expanded': expanded }">
+  <div class="row vehicle-make-row">
+    <div class="col-6">
+      <span>{{ vehicleMake.Make_Name }}</span>
+    </div>
+    <div class="col-lg-3 make-id">
+      <span>{{ vehicleMake.Make_ID }}</span>
+    </div>
+    <div class="col-6 col-lg-3">
+        <span class="details" (click)="toggleDetails()" [ngClass]="{'expanded': expanded}">
+          {{ this.expanded ? "Hide details" : "Show details" }}
+        </span>
+    </div>
+  </div>
+  <div class="row vehicle-make-details" [hidden]="!expanded">
+    <div class="col-3 make-id">
+      <p class="category">Make Id</p>
+      <p>{{ vehicleMake.Make_ID }}</p>
+    </div>
+    <div class="col-9 col-lg-12">
+      <p class="category">Vehicle Types</p>
+      <p>
+        <span *ngFor="let type of vehicleTypes; let isLast=last">
+        {{type.VehicleTypeName}}{{isLast ? '' : ', '}}
+        </span>
+      </p>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,67 @@
+#background-image {
+  position: fixed;
+  z-index: -2;
+  left: -5px;
+  right: -5px;
+  top: -5px;
+  height: 125%;
+
+  .image {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background: #fff url(assets/background.jpg);
+    -webkit-background-size: cover;
+    background-size: cover;
+    filter: blur(5px);
+  }
+
+  .background-overlay {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.65);
+  }
+}
+
+.center-block {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.vehicle-make-container {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+
+  app-vehicle-make-row:nth-child(even) > .vehicle-make-row {
+    background-color: #f5f5f5;
+  }
+
+  .vehicle-make-row div {
+    padding: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.vehicle-make-details .make-id {
+  display: none;
+}
+
+@media (max-width : 991px) {
+  .vehicle-make-row {
+    .make-id {
+      display: none;
+    }
+  }
+
+  .vehicle-make-details {
+    .make-id {
+      display: block;
+    }
+  }
+}

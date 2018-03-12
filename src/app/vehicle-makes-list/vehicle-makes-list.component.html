@@ -1,0 +1,27 @@
+<div class="vehicle-make-container" infiniteScroll [infiniteScrollDistance]="0" (scrolled)="loadMore()">
+  <div class="search-container">
+    <div class="input-group">
+      <input type="text" class="form-control" [(ngModel)]="search" (keyup.enter)="loadData()" placeholder="Search for...">
+      <span class="input-group-btn">
+        <button class="btn btn-primary" type="button" (click)="loadData()">Apply</button>
+      </span>
+    </div>
+  </div>
+  <div class="row table-header vehicle-make-row">
+    <div class="col-6">
+      <span>Name</span>
+    </div>
+    <div class="col-3 make-id">
+      <span>Make Id</span>
+    </div>
+  </div>
+  <div class="row vehicle-make-row" [hidden]="!loading">
+    <div class="col-12 loader" [inlineSVG]="'assets/spinner.svg'"></div>
+  </div>
+  <div class="row vehicle-make-row" *ngIf="error">
+    <div class="alert alert-danger col-12" role="alert">
+      {{ errorText }}
+    </div>
+  </div>
+  <div [hidden]="loading"><app-vehicle-make-row *ngFor="let make of makes" [vehicleMake]="make"></app-vehicle-make-row></div>
+</div>
